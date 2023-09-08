@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import xarray as xr
 
+"""
+Plot some data fields for Wolverine glacier.
+"""
+
 rgi_id = 'RGI60-01.09162'
 store = xr.open_zarr(f'glaciers.zarr/{rgi_id}')
 x = store['x'].data
