@@ -9,10 +9,6 @@ import pandas as pd
 import geopandas as gp
 from sklearn.cluster import KMeans
 
-
-
-
-
 coords = np.load('coords.npy')
 N = 24
 clusters = KMeans(n_clusters=N, random_state=0, n_init="auto").fit(coords)

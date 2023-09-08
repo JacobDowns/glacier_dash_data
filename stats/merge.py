@@ -31,7 +31,8 @@ dataset = pd.read_csv('alt_metric_stats.csv')
 dataset.rename(columns = {'metric' : 'dhdt_metric'}, inplace = True)
 dataset = dataset.round(2)
 datasets.append(dataset)
-    
+
+
 df = functools.reduce(lambda a, b : pd.merge(a,b,on='indexes',how='outer'), datasets)
 #df['indexes'] = df['indexes'] 
 df.rename(columns={'indexes' : 'index'}, inplace=True)

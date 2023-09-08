@@ -14,7 +14,7 @@ Downsample velocity and thickness data.
 
 base_dir = '/media/storage/glacier_dash_data/millan/'
 file_names = glob.glob(base_dir + 'V_*.tif')
-#res = 100.
+res = 100.
 
 tiles = {
     '1.1' : '0',
@@ -35,7 +35,8 @@ for file_name in file_names:
     
     data = data.rio.reproject(
         'EPSG:3857',
-        resampling=Resampling.bilinear
+        resampling=Resampling.bilinear,
+        res = res
     )
     
     file_name = file_name.split('/')[-1]
@@ -59,7 +60,8 @@ for file_name in file_names:
     data = data.rio.reproject(
         'EPSG:3857',
         resampling=Resampling.bilinear,
-        nodata=0.
+        nodata=0.,
+        res = res
     )
     #data.data[np.isnan(data.data)] = 0.
     #data.data[data.data == 0.] = np.nanw

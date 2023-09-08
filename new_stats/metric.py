@@ -16,7 +16,7 @@ from scipy.stats import binned_statistic
 
 df = pd.read_csv('stats_and_metric.csv')
 print(df)
-
+quit()
 plt.hist(df['metric1'], bins=np.linspace(-2.,2.,100))
 plt.show()
 

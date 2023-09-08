@@ -23,6 +23,7 @@ def plot_slope(i):
         zx, zy = get_slope(z)
         slope = np.sqrt(zx**2 + zy**2)
 
+        
         plt.imshow(np.rad2deg(np.arctan(slope)))
         plt.colorbar()
         plt.show()
